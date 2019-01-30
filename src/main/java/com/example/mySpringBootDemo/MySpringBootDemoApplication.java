@@ -1,5 +1,6 @@
 package com.example.mySpringBootDemo;
 
+import org.springframework.boot.Banner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,8 +12,15 @@ import java.util.Arrays;
 @SpringBootApplication
 public class MySpringBootDemoApplication {
 
+	/**
+	 * can also type $ mvn spring-boot:run to start the application
+	 * @param args
+	 */
 	public static void main(String[] args) {
-		SpringApplication.run(MySpringBootDemoApplication.class, args);
+		//SpringApplication.run(MySpringBootDemoApplication.class, args);
+		SpringApplication app = new SpringApplication(MySpringBootDemoApplication.class);
+		//app.setBannerMode(Banner.Mode.OFF);
+		app.run(args);
 	}
 
 	@Bean
